@@ -24,7 +24,6 @@ ClapTrap::ClapTrap( const ClapTrap& obj )
 	*this = obj;
 }
 
-
 ClapTrap::~ClapTrap()
 {
     std::cout << '[' << this->name << ']' << " Destructor called" << std::endl;
