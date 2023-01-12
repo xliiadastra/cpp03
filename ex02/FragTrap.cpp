@@ -42,5 +42,5 @@ FragTrap::~FragTrap()
 
 void    FragTrap::highFivesGuys(void)
 {
-    std::cout << "guardGate keeper mode" << std::endl;
+    std::cout << "high fives request !!" << std::endl;
 }

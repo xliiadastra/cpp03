@@ -6,10 +6,11 @@ CFLAGS		= -Wall -Wextra -Werror -std=c++98
 RM		= rm
 RMFLAGS		= -f
 
-INCLUDE		= ./ClapTrap.hpp ./ScavTrap.hpp
+INCLUDE		= ./ClapTrap.hpp ./ScavTrap.hpp ./FragTrap.hpp
 
 SRCS 		= ClapTrap.cpp \
 		      ScavTrap.cpp \
+			  FragTrap.cpp \
 			  main.cpp
 
 OBJS		= $(SRCS:%.cpp=%.o)
