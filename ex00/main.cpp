@@ -24,6 +24,7 @@ int main( void )
 
 	a.beRepaired(2);
 	a.attack(b.getName());
+	b.beRepaired(2);
 
 	return 0;
 }

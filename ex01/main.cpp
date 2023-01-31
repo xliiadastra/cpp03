@@ -1,17 +1,13 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+
 int main( void )
 {
+	ClapTrap a("Zion.T");
 
-	// ClapTrap a("Zion.T");
-    // ClapTrap b("Simon");
-
-	ScavTrap a("Zion.T");
-	ScavTrap b("Simon");	
-
-//	a.setDamage(3);
-	a.attack(b.getName());
-	b.takeDamage(a.getDamage());
+	a.setDamage(3);
+	a.attack("Simon");
+	a.takeDamage(a.getDamage());
 
 	a.beRepaired(2);
 	a.beRepaired(2);
@@ -22,12 +18,31 @@ int main( void )
 	a.beRepaired(2);
 	a.beRepaired(2);
 
-//	a.setDamage(7);
-	a.attack(b.getName());
-	b.takeDamage(a.getDamage());
-
+	a.attack("Tom");
 	a.beRepaired(2);
-	a.attack(b.getName());
-	a.guardGate();	
+	a.attack("Carol");
+
+	ScavTrap b("Marin");
+	ScavTrap c("Scv");
+
+	b.attack(c.getName());
+	c.takeDamage(b.getDamage());
+	
+	b.beRepaired(2);
+	
+	b.attack(c.getName());
+	c.takeDamage(b.getDamage());
+	c.guardGate();
+	
+	b.attack(c.getName());
+	c.takeDamage(b.getDamage());
+	b.attack(c.getName());
+	c.takeDamage(b.getDamage());
+	c.guardGate();
+
+	b.attack(c.getName());
+	c.takeDamage(b.getDamage());
+	c.guardGate();
+
 	return 0;
 }

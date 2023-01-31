@@ -7,6 +7,7 @@ ScavTrap::ScavTrap()
     this->hitPoint = 100;
     this->energyPoint = 50;
     this->attackDamage = 20;
+    this->keeper_mode = false;
 }
 
 ScavTrap::ScavTrap( std::string name )
@@ -16,6 +17,7 @@ ScavTrap::ScavTrap( std::string name )
     this->hitPoint = 100;
     this->energyPoint = 50;
     this->attackDamage = 20;
+    this->keeper_mode = false;
 }
 
 ScavTrap::ScavTrap( const ScavTrap& obj )
@@ -42,9 +44,9 @@ ScavTrap::~ScavTrap()
 
 void    ScavTrap::attack(const std::string& target)
 {
-    if (getEnergy() == 0)
+    if (getEnergy() == 0 || getHp() == 0)
     {
-        std::cout << "ScavTrap [" << getName() << "] have not enough energy!" << std::endl;
+        std::cout << "ScavTrap [" << getName() << "] have not enough energy or Hp!" << std::endl;
         return ;
     }
     std::cout << "ScavTrap [" << getName() << ']' <<  " attaks " \
@@ -55,5 +57,15 @@ void    ScavTrap::attack(const std::string& target)
 
 void    ScavTrap::guardGate()
 {
-    std::cout << "guardGate keeper mode" << std::endl;
+    if (this->getHp() == 0)
+        std::cout << "Cannot enter Gatekeep_mode because there is no HP." << std::endl;
+    else if (this->getHp() != 0 && this->keeper_mode == false)
+    {
+        std::cout << "guardGate keeper mode Start !" << std::endl;
+        this->keeper_mode = true;
+    }
+    else if (this->getHp() != 0 && this->keeper_mode == true)
+    {
+        std::cout << "already guardGate kerper mode" << std::endl;
+    }
 }

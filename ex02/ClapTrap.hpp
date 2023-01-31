@@ -16,10 +16,10 @@ public:
     ClapTrap();
     ClapTrap( std::string name );
     ClapTrap( const ClapTrap& obj );
-    ~ClapTrap();
+    virtual ~ClapTrap();
     ClapTrap&   operator=( const ClapTrap& orig );
 
-    void attack(const std::string& target);
+    virtual void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 

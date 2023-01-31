@@ -6,6 +6,9 @@
 
 class ScavTrap : public ClapTrap
 {
+private:
+    bool    keeper_mode;
+
 public:
     ScavTrap();
     ScavTrap( std::string name );

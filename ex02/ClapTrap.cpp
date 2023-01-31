@@ -67,9 +67,9 @@ void ClapTrap::setDamage(unsigned int damage)
 
 void ClapTrap::attack(const std::string& target)
 {
-    if (getEnergy() == 0)
+    if (getEnergy() == 0 || getHp() == 0)
     {
-        std::cout << "ClapTrap [" << getName() << "] have not enough energy!" << std::endl;
+        std::cout << "ClapTrap [" << getName() << "] have not enough energy or Hp!" << std::endl;
         return ;
     }
     std::cout << "ClapTrap [" << getName() << ']' <<  " attaks " \
@@ -101,9 +101,9 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    if (getEnergy() == 0)
+    if (getEnergy() == 0 || getHp() == 0)
     {
-        std::cout << "ClapTrap [" << getName() << "] have not enough energy!" << std::endl;
+        std::cout << "ClapTrap [" << getName() << "] have not enough energy or Hp!" << std::endl;
         return ;
     }
     std::cout << "ClapTrap [" << getName() << ']' << " got repaired " \
